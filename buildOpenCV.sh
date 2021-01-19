@@ -2,9 +2,9 @@
 # License: MIT. See license file in root directory
 # Copyright(c) JetsonHacks (2017-2019)
 
-OPENCV_VERSION=4.1.1
+OPENCV_VERSION=4.4.0
 # Jetson Nano
-ARCH_BIN=5.3
+ARCH_BIN=7.2
 INSTALL_DIR=/usr/local
 # Download the opencv_extras repository
 # If you are installing the opencv testdata, ie
@@ -151,17 +151,10 @@ cd build
 echo $PWD
 time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} \
-      -D WITH_CUDA=ON \
-      -D CUDA_ARCH_BIN=${ARCH_BIN} \
-      -D CUDA_ARCH_PTX="" \
-      -D ENABLE_FAST_MATH=ON \
-      -D CUDA_FAST_MATH=ON \
-      -D WITH_CUBLAS=ON \
       -D WITH_LIBV4L=ON \
       -D WITH_V4L=ON \
       -D WITH_GSTREAMER=ON \
       -D WITH_GSTREAMER_0_10=OFF \
-      -D WITH_QT=ON \
       -D WITH_OPENGL=ON \
       -D BUILD_opencv_python2=ON \
       -D BUILD_opencv_python3=ON \
