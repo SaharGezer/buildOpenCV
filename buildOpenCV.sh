@@ -100,11 +100,6 @@ apt-get install -y \
     zlib1g-dev \
     pkg-config
 
-# We will be supporting OpenGL, we need a little magic to help
-# https://devtalk.nvidia.com/default/topic/1007290/jetson-tx2/building-opencv-with-opengl-support-/post/5141945/#5141945
-cd /usr/local/cuda/include
-patch -N cuda_gl_interop.h $WHEREAMI'/patches/OpenGLHeader.patch' 
-
 # Python 2.7
 apt-get install -y python-dev  python-numpy  python-py  python-pytest
 # Python 3.6
@@ -155,7 +150,6 @@ time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_V4L=ON \
       -D WITH_GSTREAMER=ON \
       -D WITH_GSTREAMER_0_10=OFF \
-      -D WITH_OPENGL=ON \
       -D BUILD_opencv_python2=ON \
       -D BUILD_opencv_python3=ON \
       -D BUILD_TESTS=OFF \
